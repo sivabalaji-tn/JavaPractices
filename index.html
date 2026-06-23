@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Glassmorphism UI</title>
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN (For UI Elements) -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+
+  <style>
+    /* 1. VIVID GRADIENT BACKGROUND - Essential for glassmorphism visibility */
+    body {
+      background: radial-gradient(circle at 10% 20%, rgb(87, 108, 117) 0%, rgb(37, 50, 55) 100.2%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #ffffff;
+      padding-top: 80px;
+    }
+
+    /* Decorative background shapes to show off the glass blur effect */
+    .bg-shape-1 {
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(45deg, #ff7b00, #ffae00);
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: -1;
+      opacity: 0.6;
+    }
+    .bg-shape-2 {
+      position: absolute;
+      bottom: 15%;
+      right: 15%;
+      width: 400px;
+      height: 400px;
+      background: linear-gradient(45deg, #00b4db, #0083b0);
+      border-radius: 50%;
+      filter: blur(50px);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    /* 2. THE GLASSMORPHISM UTILITY CORE */
+    .ui-glass {
+      background: rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(14px) !important;
+      -webkit-backdrop-filter: blur(14px) !important; /* Safari compatibility */
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* 3. GLASS INTERACTIVE ELEMENTS (Inputs and internal buttons) */
+    .ui-glass-input {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      color: #fff !important;
+    }
+    .ui-glass-input:focus {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Text contrast helper tweaks */
+    .text-glass-muted {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Abstract background accent colors -->
+  <div class="bg-shape-1"></div>
+  <div class="bg-shape-2"></div>
+
+  <!-- Glassmorphic Fixed Top Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top ui-glass">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="bi bi-cpu-fill me-2"></i>GlassUI</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-expand navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Grid Dashboard Content -->
+  <main class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Card 1: Main Metric Panel -->
+      <div class="col-lg-8">
+        <div class="card ui-glass h-100 p-4 rounded-4 text-white">
+          <div class="card-body">
+            <span class="badge bg-light text-dark mb-2 px-3 py-2 rounded-pill fw-semibold">Live System Stats</span>
+            <h1 class="display-5 fw-bold mb-3">Enterprise Overview</h1>
+            <p class="fs-5 text-glass-muted mb-4">Real-time data flow analysis and edge server latency optimization dashboard layout.</p>
+            
+            <div class="row g-3">
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.05)">
+                  <h3 class="fw-bold mb-0">99.9%</h3>
+                  <small class="text-glass-muted">Uptime Status</small>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.05)">
+                  <h3 class="fw-bold mb-0">14.2 ms</h3>
+                  <small class="text-glass-muted">Global Latency</small>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.05)">
+                  <h3 class="fw-bold mb-0">4.8 TB</h3>
+                  <small class="text-glass-muted">Data Parsed</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Glassmorphic Quick Action Form Box -->
+      <div class="col-lg-4">
+        <div class="card ui-glass h-100 p-4 rounded-4 text-white">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <h4 class="fw-bold mb-3"><i class="bi bi-shield-lock-fill me-2"></i>Access Control</h4>
+              <p class="small text-glass-muted mb-4">Deploy instantaneous configuration changes to production clusters globally.</p>
+              
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Cluster Token Key</label>
+                <input type="password" class="form-control form-control-lg ui-glass-input rounded-3" placeholder="••••••••••••">
+              </div>
+              
+              <div class="mb-4">
+                <label class="form-label small fw-semibold">Deployment Region</label>
+                <select class="form-select form-select-lg ui-glass-input rounded-3">
+                  <option selected class="bg-dark">US-East Edge (Primary)</option>
+                  <option class="bg-dark">EU-Central Node</option>
+                  <option class="bg-dark">AP-South Hub</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn btn-light btn-lg w-100 rounded-3 fw-bold shadow-sm py-2">
+              Push Live System Build
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://jsdelivr.net"></script>
+</body>
+</html>
