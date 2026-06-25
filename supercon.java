@@ -10,8 +10,8 @@ class Student extends Person {
     String name = "Sub Class";
 
     Student() {
-        //super(); 
-        System.out.println(super.name);
+        super(); 
+        System.out.println(name);
     }
 }
 
